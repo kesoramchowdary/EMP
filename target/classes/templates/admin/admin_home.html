@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<style>
+    body 
+      {
+      background-image: url('https://img.freepik.com/free-vector/white-abstract-wallpaper_23-2148830025.jpg?w=2000');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: 100% 100%;
+      }
+    </style>
+	<meta charset="ISO-8859-1">
+	<title>List Users</title>
+	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+	<script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">HR Portal</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+    </ul>
+    <form th:action="@{/admin/logout}" method="post">
+			<input type="submit" value=" Logout" />
+		</form>
+  </div>
+</nav>
+<div class="container text-center">
+	<h4> welcome to portal</h4>
+	<h3><a th:href="@{/admin/registernewemp}">--->Register new employee(click here)</a></h3>
+	
+	
+		<h1>List of Users</h1>
+	</div>
+	
+	<div>
+		<table class="table table-striped table-bordered">
+			<thead class="thead-dark">
+				<tr>
+					<th>User ID</th>
+					<th>E-mail</th>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>Remove Employee</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="user: ${listUsers}">
+					<td th:text="${user.id}">User ID</td>
+					<td th:text="${user.email}">E-mail</td>
+					<td th:text="${user.firstName}">First Name</td>
+					<td th:text="${user.lastName}">Last Name</td>
+					<td><a th:href="@{/deleteEmployee(Id=${user.id})}" class="btn btn-danger ml-2">Delete</a></td> 
+				</tr>
+			</tbody>
+		</table>
+		<div class="container text-center">
+		</div>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="ISO-8859-1">
+    <title>Employee-Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      /* Global styles */
+      body 
+      {
+      background-image: url('https://img.freepik.com/free-vector/white-abstract-wallpaper_23-2148830025.jpg?w=2000');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: 100% 100%;
+      }
+      /* Form styles */
+      form 
+      {
+        width: 360px;
+        margin: 100px auto;
+        background-color: rgba(255, 255, 255, 0.068);
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px 0px #fff;
+      }
+
+      /* Form title */
+      h1 
+      {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      /* Input styles */
+      input[type="text"], input[type="password"] 
+      {
+        width: 100%;
+        padding: 12px 20px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+
+      /* Button styles */
+      button 
+      {
+        width: 20%;
+        background-color: #323f44;
+        color: #fff;
+        padding: 10px 20px;
+        margin-bottom: 20px;
+        margin-left: 129px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        
+      }
+
+      /* Link styles */
+      a 
+      {
+        color: rgb(128, 0, 128);
+        text-decoration: none;
+      }
+
+      /* Additional link styles */
+      .hr-section, .contact-section 
+      {
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      /* Image styles */
+      img 
+      {
+        width: 5%;
+        margin-bottom: 5px;
+      }
+      /* Form styles */
+     form 
+     {
+     width: 360px;
+     margin: 100px auto;
+     background-color: #fff;
+     padding: 40px;
+     border-radius: 10px;
+     box-shadow: 0px 0px 10px 0px #ccc;
+     }
+
+     /* Form styles for desktop mode */
+    @media only screen and (min-width: 768px) 
+    {
+    form 
+    {
+    width: 720px;
+    }
+   }
+    #header 
+    {
+    float: left; /* or float: right; */
+  }
+
+   #date 
+   {
+   text-align: right; /* or text-align: right; */
+  }
+  #header 
+  {
+  display: flex; /* or grid */
+  align-items: center; /* align items vertically */
+  justify-content: space-between; /* align items horizontally */
+  }
+    </style>
+    
+      <script>
+      // Get the current date and time
+      function displayDate() {
+
+        var date = new Date();
+        var dateString = date.toLocaleDateString() + " " + date.toLocaleTimeString();
+        document.getElementById("date").innerHTML = dateString;
+      }
+      setInterval(displayDate,1000);
+    </script>
+    
+  </head>
+  <body>
+  
+    
+      <img src="https://www.valusolutions.com/wp-content/uploads/2015/07/employee-logo-1.gif" alt="Portal logo">
+      <div id="date" style="border-top-right-radius: 5px; color: whitesmoke;"></div>
+      <div><h1>Employee Management Portal</h1></div>
+      <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+      <div style="display: flex; flex-direction: row;">
+ <body style="background-color: lightgray;">
+  <div style="margin-right: 4em;">
+    <h3><a th:href="@{/admin/login}"><b>HR LOGIN</b></a></h3>
+  </div>
+  <div style="margin-right: 4em;">
+    <h4><a th:href="@{/employee/login}"><b>EMPLOYEE LOGIN</b></a></h4>
+  </div>
+  <div>
+    <h4><a th:href="@{/register}">HR REGISTRATION</a></h4>
+  </div>
+</body>
+</div>
+      <div class="contact-section">
+      </div>
+  </body>
+  
+
+</html>
